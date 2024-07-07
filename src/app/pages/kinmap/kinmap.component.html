@@ -9,20 +9,21 @@
 
 <p-splitter [style]="{ height: '100vh', border: '0px' }" styleClass="mb-5">
   <ng-template pTemplate>
-    <p-splitter
-      styleClass="mb-5"
-      layout="vertical"
-    >
+    <p-splitter styleClass="mb-5" layout="vertical">
       <ng-template pTemplate>
-        <div class="col" style="overflow: auto;">
-          <div style="text-align:right">
+        <div class="col" style="overflow: auto">
+          <p class="text-3xl w-10 font-semibold">Individuals</p>
+          <div style="text-align: right">
             <p-button icon="pi pi-user-plus" />
           </div>
         </div>
       </ng-template>
       <ng-template pTemplate>
-        <div class="col" style="overflow: auto;">
-          Panel 2
+        <div class="col" style="overflow: auto">
+          <p class="text-3xl w-10 font-semibold">Associations</p>
+          <div style="text-align: right">
+            <p-button icon="pi pi-link" />
+          </div>
         </div>
       </ng-template>
     </p-splitter>
