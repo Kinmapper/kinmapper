@@ -1,0 +1,23 @@
+<p-toolbar [style]="{ border: '0px', background: 'transparent' }">
+  <div class="p-toolbar-group-start">
+    <input pInputText placeholder="Untitled kinmap" class="mr-2" />
+
+    <p-button icon="pi pi-save" class="mr-2" />
+    <p-button icon="pi pi-download" class="mr-2" />
+  </div>
+</p-toolbar>
+
+<p-splitter [style]="{ height: '100vh', border: '0px' }" styleClass="mb-5">
+  <ng-template pTemplate>
+    <div class="col flex align-items-center justify-content-center">
+      Panel 1
+    </div>
+  </ng-template>
+  <ng-template pTemplate>
+    <div
+      echarts
+      [options]="options"
+      class="col flex align-items-center justify-content-center demo-chart"
+    ></div>
+  </ng-template>
+</p-splitter>
