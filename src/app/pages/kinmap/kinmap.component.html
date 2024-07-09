@@ -1,3 +1,83 @@
+<p-dialog
+  header="Header"
+  [(visible)]="displayIndividualAdditionDialog"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+>
+  <ng-template pTemplate="header">
+    <div class="inline-flex align-items-center justify-content-center gap-2">
+      <span class="font-bold white-space-nowrap">Individual</span>
+    </div>
+  </ng-template>
+  <div class="flex flex-column gap-2">
+    <label for="username">Name</label>
+    <input pInputText id="username" aria-describedby="username-help" />
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Cancel"
+      [text]="true"
+      severity="secondary"
+      (click)="displayIndividualAdditionDialog = false"
+    />
+    <p-button
+      label="Save"
+      [outlined]="true"
+      severity="secondary"
+      (click)="displayIndividualAdditionDialog = false"
+    />
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  header="Header"
+  [(visible)]="displayAssociationAdditionDialog"
+  [modal]="true"
+  [style]="{ width: '25rem' }"
+>
+  <ng-template pTemplate="header">
+    <div class="inline-flex align-items-center justify-content-center gap-2">
+      <span class="font-bold white-space-nowrap">Association</span>
+    </div>
+  </ng-template>
+
+  <div class="flex">
+    <div class="flex-1 flex flex-column">
+      <label for="from">From</label>
+      <br />
+      <p-dropdown id="from" />
+    </div>
+    <div class="flex-1 flex align-items-center justify-content-center">
+      <span class="arrow">&#8594;</span>
+    </div>
+    <div class="flex-1 flex flex-column align-items-end">
+      <label for="to">To</label>
+      <br />
+      <p-dropdown id="to" />
+    </div>
+  </div>
+  <br />
+  <label for="from">Type</label>
+  <br />
+  <br />
+  <p-dropdown id="type" [style]="{ width: '100%' }" />
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Cancel"
+      [text]="true"
+      severity="secondary"
+      (click)="displayAssociationAdditionDialog = false"
+    />
+    <p-button
+      label="Save"
+      [outlined]="true"
+      severity="secondary"
+      (click)="displayAssociationAdditionDialog = false"
+    />
+  </ng-template>
+</p-dialog>
+
 <p-toolbar [style]="{ border: '0px', background: 'transparent' }">
   <div class="p-toolbar-group-start">
     <input pInputText placeholder="Untitled kinmap" class="mr-2" />
@@ -14,7 +94,10 @@
         <div class="col" style="overflow: auto">
           <p class="text-3xl w-10 font-semibold">Individuals</p>
           <div style="text-align: right">
-            <p-button icon="pi pi-user-plus" />
+            <p-button
+              icon="pi pi-user-plus"
+              (click)="displayIndividualAdditionDialog = true"
+            />
           </div>
         </div>
       </ng-template>
@@ -22,7 +105,10 @@
         <div class="col" style="overflow: auto">
           <p class="text-3xl w-10 font-semibold">Associations</p>
           <div style="text-align: right">
-            <p-button icon="pi pi-link" />
+            <p-button
+              icon="pi pi-link"
+              (click)="displayAssociationAdditionDialog = true"
+            />
           </div>
         </div>
       </ng-template>

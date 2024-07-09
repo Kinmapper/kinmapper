@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { SplitterModule } from 'primeng/splitter';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -13,6 +15,8 @@ import { ToolbarModule } from 'primeng/toolbar';
   imports: [
     ButtonModule,
     CommonModule,
+    DialogModule,
+    DropdownModule,
     InputTextModule,
     NgxEchartsDirective,
     SplitterModule,
@@ -25,6 +29,8 @@ import { ToolbarModule } from 'primeng/toolbar';
   ]
 })
 export class KinmapComponent {
+  displayIndividualAdditionDialog: boolean = false;
+  displayAssociationAdditionDialog: boolean = false;
   options!: EChartsOption;
 
   constructor() { }
