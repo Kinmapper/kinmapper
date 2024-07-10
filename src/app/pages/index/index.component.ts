@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Snowflake } from "@theinternetfolks/snowflake";
 import { MenuItem } from 'primeng/api';
+import { CardModule } from 'primeng/card';
 import { SpeedDialModule } from 'primeng/speeddial';
 
 @Component({
   selector: 'app-index',
   standalone: true,
   imports: [
+    CardModule,
     SpeedDialModule
   ],
   templateUrl: './index.component.html',
