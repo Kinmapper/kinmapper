@@ -1,0 +1,6 @@
+:host ::ng-deep {
+  .p-speeddial-direction-up {
+    left: calc(50% - 2rem);
+    bottom: 0;
+  }
+}
